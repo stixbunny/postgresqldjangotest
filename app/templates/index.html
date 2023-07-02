@@ -1,0 +1,28 @@
+{% include "./base.html" %}
+{% block content %}
+<h1>Index</h1>
+{% if films %}
+	<table>
+		<thead>
+			<tr>
+				<td>Nombre</td>
+				<td>Fecha de lanzamiento</td>
+				<td>Género</td>
+				<td>Calificación</td>
+			</tr>
+		</thead>
+		<tbody>
+		{% for film in films %}
+			<tr>
+				<td>{{ film.name }}</td>
+				<td>{{ film.release_date }}</td>
+				<td>{{ film.get_genre_display }}</td>
+				<td>{{ film.rating }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+	<h2>Aun no hay películas u_u</h2>
+{% endif %}
+{% endblock %}

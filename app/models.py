@@ -18,7 +18,7 @@ class Film(models.Model):
         (G_DRAMA, "Drama")
     ]
     name = models.CharField("Nombre", max_length=50)
-    release_date = models.DateField("Fecha de estreno", )
+    release_date = models.DateField("Fecha de estreno")
     genre = models.CharField("Género", max_length=5, choices=GENRE_CHOICES, blank=True)
     RATING_CHOICES = [
         (1, 1),

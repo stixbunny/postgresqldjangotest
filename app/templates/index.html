@@ -15,9 +15,9 @@
 		{% for film in films %}
 			<tr>
 				<td>{{ film.name }}</td>
-				<td>{{ film.release_date }}</td>
-				<td>{{ film.get_genre_display }}</td>
-				<td>{{ film.rating }}</td>
+				<td>{{ film.release_date|date:"d/m/Y" }}</td>
+				<td>{{ film.get_genre_display|default:"Sin género" }}</td>
+				<td>{{ film.rating|default_if_none:"No calificado" }}</td>
 			</tr>
 		{% endfor %}
 		</tbody>
